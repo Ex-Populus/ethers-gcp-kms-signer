@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openlawteam/ethers-gcp-kms-signer.git"
+    "url": "git+https://github.com/Ex-Populus/ethers-gcp-kms-signer.git"
   },
   "author": "",
   "license": "MIT",
