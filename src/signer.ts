@@ -30,8 +30,6 @@ export class GcpKmsSigner extends ethers.Signer {
 
   ethereumAddress: string;
 
-  forceRelease9: boolean;
-
   constructor(kmsCredentials: GcpKmsSignerCredentials, provider?: ethers.providers.Provider) {
     super();
     ethers.utils.defineReadOnly(this, "provider", provider || null);
