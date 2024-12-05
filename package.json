@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "An Ethers.js compatible signer that connects to GCP KMS",
   "main": "dist/signer.js",
+  "type": "module",
   "types": "dist/signer.d.ts",
   "scripts": {
     "type-check": "tsc --noEmit",
