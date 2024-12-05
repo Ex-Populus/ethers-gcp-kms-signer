@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.7...1.0.8) (2024-12-05)
+
+
+### Bug Fixes
+
+* remove unused field for forced update tests ([3d8d992](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/3d8d99238e77bc8196173be7e5c81ec8ec3f6ed1))
+
 ## [1.0.7](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.6...1.0.7) (2024-12-05)
 
 
