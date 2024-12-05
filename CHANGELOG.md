@@ -1,3 +1,13 @@
+## [1.0.5](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/v1.0.4...1.0.5) (2024-12-05)
+
+
+### Bug Fixes
+
+* es modules ([a34b304](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/a34b30465eb7a7c6898c6c9ee982afac77e915b3))
+* linting ([d86447a](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/d86447add1f0cc91c7593df951561659c4eb50e5))
+* try changing semantic release deps ([72e52d5](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/72e52d51c79c3b358bbd2da7bcc13b3859f1b7e5))
+* update to type:module ([ca9213c](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/ca9213c58dcec0366c1d13873b4eb91f10ad0a7b))
+
 ## [1.0.4](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/v1.0.3...v1.0.4) (2024-12-05)
 
 
