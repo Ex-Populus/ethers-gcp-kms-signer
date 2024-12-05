@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/v1.0.3...v1.0.4) (2024-12-05)
+
+
+### fix
+
+* add publishConfig to package ([1390940](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/139094046d9150032a515f8cb94c79fd0fc060c6))
+* force update ([f118196](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/f11819608ca44e5e7528016b026f85e362c1006c))
+
 ## [1.1.6](https://github.com/openlawteam/ethers-gcp-kms-signer/compare/v1.1.5...v1.1.6) (2022-11-17)
 
 
