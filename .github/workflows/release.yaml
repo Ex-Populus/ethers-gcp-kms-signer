@@ -62,7 +62,7 @@ jobs:
           context: .
           file: db.Dockerfile
           push: true
-          tags: ghcr.io/Ex-Populus/ethers-gcp-kms-signer:${{ steps.semantic.outputs.new_release_version }}
+          tags: ghcr.io/ex-populus/ethers-gcp-kms-signer:${{ steps.semantic.outputs.new_release_version }}
           platforms: linux/amd64,linux/arm64
 
       - name: Do something when a new release published
