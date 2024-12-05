@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.6...1.0.7) (2024-12-05)
+
+
+### Bug Fixes
+
+* update to scoped name ([1106b54](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/1106b54738d2ed2d7efa647d9fa9e04175cc57d7))
+
 ## [1.0.6](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.5...1.0.6) (2024-12-05)
 
 
