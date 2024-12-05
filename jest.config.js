@@ -1,4 +1,5 @@
 const config = {
   verbose: false,
 };
-module.exports = config;
+
+export default config;
