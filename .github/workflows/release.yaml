@@ -20,20 +20,14 @@ jobs:
         with:
           lfs: 'true'
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: 9
-          run_install: false
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
@@ -60,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: db.Dockerfile
+          file: Dockerfile
           push: true
           tags: ghcr.io/ex-populus/ethers-gcp-kms-signer:${{ steps.semantic.outputs.new_release_version }}
           platforms: linux/amd64,linux/arm64
