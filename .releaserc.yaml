@@ -1,3 +1,2 @@
 branch: master
-plugins:
-  - "@semantic-release/github"
+extends: "semantic-release-npm-github-publish"
