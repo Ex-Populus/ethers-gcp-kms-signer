@@ -1,6 +1,6 @@
 {
   "name": "@ex-populus/ethers-gcp-kms-signer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An Ethers.js compatible signer that connects to GCP KMS",
   "main": "dist/signer.js",
   "type": "module",
