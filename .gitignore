@@ -112,3 +112,6 @@ __snapshots__
 
 # Mac OS
 .DS_Store
+
+# Scratch files
+scratch.sh
