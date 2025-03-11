@@ -1,12 +1,31 @@
 import { ethers } from "ethers";
 import { KeyManagementServiceClient } from "@google-cloud/kms";
-import * as asn1 from "asn1.js";
+import asn1Lib from "asn1.js";
 import BN from "bn.js";
-import * as KeyEncoder from "key-encoder"; // https://github.com/stacks-network/key-encoder-js/issues/16
+import { KeyEncoder } from "../key-encoder"; // https://github.com/stacks-network/key-encoder-js/issues/16
 import { GcpKmsSignerCredentials } from "../signer";
 
+// Handle both ESM and CommonJS imports for asn1
+const getAsn1 = () => {
+  // For CommonJS
+  if (typeof asn1Lib === "object" && typeof asn1Lib.define === "function") {
+    return asn1Lib;
+  }
+  // For ESM
+  if (
+    typeof asn1Lib === "object" &&
+    (asn1Lib as any).default &&
+    typeof (asn1Lib as any).default.define === "function"
+  ) {
+    return (asn1Lib as any).default;
+  }
+  throw new Error("Could not resolve asn1.js library");
+};
+
+const asn1 = getAsn1();
+
 // eslint-disable-next-line new-cap
-const keyEncoder = new KeyEncoder.default("secp256k1");
+const keyEncoder = new KeyEncoder("secp256k1");
 
 /* this asn1.js library has some funky things going on */
 /* eslint-disable func-names */

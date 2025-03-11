@@ -12,4 +12,16 @@ export default defineConfig({
   metafile: true,
   platform: "node",
   splitting: false,
+  treeshake: true,
+  // Add specific options for CJS and ESM
+  // This helps ensure proper usage of imports/requires in each format
+  esbuildOptions(options, context) {
+    const newOptions = { ...options };
+    if (context.format === "cjs") {
+      newOptions.mainFields = ["main"];
+    } else {
+      newOptions.mainFields = ["module", "main"];
+    }
+    return newOptions;
+  },
 });

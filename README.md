@@ -8,7 +8,7 @@ This is a wallet or signer that can be used together with [Ethers.js](https://gi
 npm i ethers-gcp-kms-signer
 ```
 
-1. Create your asymmetric key as follows: https://cloud.google.com/kms/docs/creating-asymmetric-keys with  `EC_SIGN_SECP256K1_SHA256` algorithm.
+1. Create your asymmetric key as follows: https://cloud.google.com/kms/docs/creating-asymmetric-keys with `EC_SIGN_SECP256K1_SHA256` algorithm.
 
 2. Add the new service account to GCP with the correct KMS roles: Crypto KMS `Signer`, `Verifier`, `Viewer`
 
@@ -37,6 +37,33 @@ const tx = await signer.sendTransaction({
 });
 console.log(tx);
 ```
+
+## Module Format Support
+
+This package supports both ES Modules (ESM) and CommonJS (CJS) formats. You can use it in either type of project:
+
+### ESM (Modern JavaScript)
+
+```js
+import { GcpKmsSigner } from "ethers-gcp-kms-signer";
+```
+
+### CommonJS
+
+```js
+const { GcpKmsSigner } = require("ethers-gcp-kms-signer");
+```
+
+### About the ESM/CommonJS Compatibility
+
+We've made significant improvements to ensure this package works seamlessly in both ESM and CommonJS environments. The key changes include:
+
+- **Dynamic Module Resolution**: We implemented helper functions to detect whether the code is running in an ESM or CommonJS context and handle imports accordingly.
+- **Compatibility with Legacy Dependencies**: Some of our dependencies (like `elliptic` and `asn1.js`) were originally written for CommonJS. We've added code to properly resolve these modules in both environments.
+
+- **Comprehensive Testing**: We've added tests that verify the package can be properly imported in both ESM and CommonJS projects.
+
+These changes ensure the package can be used with both modern ESM-based projects and legacy CommonJS projects without any additional configuration.
 
 # Developers
 
