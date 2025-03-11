@@ -2,8 +2,11 @@ import { ethers } from "ethers";
 import { KeyManagementServiceClient } from "@google-cloud/kms";
 import * as asn1 from "asn1.js";
 import BN from "bn.js";
-import KeyEncoder from "key-encoder";
 import { GcpKmsSignerCredentials } from "../signer";
+
+// https://github.com/stacks-network/key-encoder-js/issues/16
+// have to do this to avoid a build error
+const KeyEncoder = require("key-encoder").default;
 
 const keyEncoder = new KeyEncoder("secp256k1");
 
