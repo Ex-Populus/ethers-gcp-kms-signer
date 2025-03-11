@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.1.0...1.1.1) (2025-03-11)
+
+
+### Bug Fixes
+
+* update package versions and imports ([d47a000](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/d47a0006120ccf6b13e182e0801c376e5bdd4c20))
+
 # [1.1.0](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.12...1.1.0) (2025-03-11)
 
 
