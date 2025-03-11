@@ -15,6 +15,9 @@ commitlint.config.js
 release.config.js
 .yo-rc.json
 tsup.config.js
+CHANGELOG.md
+README.md
+LICENSE
 
 # Git and GitHub
 .git/
