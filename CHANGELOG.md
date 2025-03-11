@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.11...1.0.12) (2025-03-11)
+
+
+### Bug Fixes
+
+* update key-encoder import and initialization ([a504e3b](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/a504e3bd3300c72546fb211249e8f47770ff5c8b))
+
 ## [1.0.11](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.10...1.0.11) (2025-03-11)
 
 
