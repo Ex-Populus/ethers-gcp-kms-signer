@@ -1,6 +1,6 @@
 // ESM import test
-import { GcpKmsSigner, TypedDataVersion } from "../../dist/signer.js";
 import { strict as assert } from "assert";
+import { GcpKmsSigner, TypedDataVersion } from "../../dist/signer.js";
 
 describe("ESM import test", () => {
   test("GcpKmsSigner class is exported correctly", () => {

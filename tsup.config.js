@@ -16,10 +16,12 @@ export default defineConfig({
   // Add specific options for CJS and ESM
   // This helps ensure proper usage of imports/requires in each format
   esbuildOptions(options, context) {
+    const newOptions = { ...options };
     if (context.format === "cjs") {
-      options.mainFields = ["main"];
+      newOptions.mainFields = ["main"];
     } else {
-      options.mainFields = ["module", "main"];
+      newOptions.mainFields = ["module", "main"];
     }
+    return newOptions;
   },
 });
