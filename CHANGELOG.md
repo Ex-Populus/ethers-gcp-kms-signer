@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.12...1.1.0) (2025-03-11)
+
+
+### Features
+
+* integrate elliptic library and implement key encoding without using the external library ([4d39f94](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/4d39f94692ed4359071f3b582dce1ba06abd5387))
+
 ## [1.0.12](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.11...1.0.12) (2025-03-11)
 
 
