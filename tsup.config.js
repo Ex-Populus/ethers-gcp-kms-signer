@@ -4,7 +4,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   entry: ["src/signer.ts"], // entry point
   format: ["esm", "cjs"], // for both CommonJS and ESModule outputs
-  target: "es2020", // Keeps the output in modern syntax
+  target: "es2017", // Keeps the output in modern syntax
   dts: true, // generate .d.ts files for TypeScript
   sourcemap: true,
   minify: false,
