@@ -14,6 +14,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "test": "jest",
+    "test:modules": "./test/module-tests/test-modules.sh",
     "coverage": "npm test -- --coverage",
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",

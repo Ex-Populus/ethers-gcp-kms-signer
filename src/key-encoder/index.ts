@@ -1,11 +1,50 @@
 /* eslint-disable */
 
-import { ec as EC } from "elliptic";
+// Import elliptic in a way that works for both ESM and CommonJS
+import ellipticLib from "elliptic";
 
-// @ts-ignore
-import * as asn1 from "asn1.js";
+// Handle both ESM and CommonJS imports
+const getElliptic = () => {
+  // For CommonJS: elliptic is directly the module with .ec property
+  if (typeof ellipticLib === "object" && (ellipticLib as any).ec) {
+    return ellipticLib;
+  }
+  // For ESM: elliptic might be in the default export
+  if (typeof ellipticLib === "object" && (ellipticLib as any).default && (ellipticLib as any).default.ec) {
+    return (ellipticLib as any).default;
+  }
+  throw new Error("Could not resolve elliptic library");
+};
 
-const BN = require("bn.js");
+// Get the elliptic library
+const elliptic = getElliptic();
+// Get the EC constructor
+const EC = (elliptic as any).ec;
+
+// Import asn1.js in a way that works for both ESM and CommonJS
+import asn1Lib from "asn1.js";
+
+// Handle both ESM and CommonJS imports for asn1
+const getAsn1 = () => {
+  // For CommonJS
+  if (typeof asn1Lib === "object" && typeof asn1Lib.define === "function") {
+    return asn1Lib;
+  }
+  // For ESM
+  if (
+    typeof asn1Lib === "object" &&
+    (asn1Lib as any).default &&
+    typeof (asn1Lib as any).default.define === "function"
+  ) {
+    return (asn1Lib as any).default;
+  }
+  throw new Error("Could not resolve asn1.js library");
+};
+
+const asn1 = getAsn1();
+
+// Import BN instead of using require
+import BN from "bn.js";
 
 /**
  * Use types for the `bn.js` lib, e.g. `@types/bn.js`
@@ -50,7 +89,7 @@ interface CurveOptions {
   curveParameters: number[];
   privatePEMOptions: { label: string };
   publicPEMOptions: { label: string };
-  curve: EC;
+  curve: any;
 }
 
 const curves: { [index: string]: CurveOptions } = {

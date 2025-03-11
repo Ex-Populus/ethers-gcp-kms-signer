@@ -12,5 +12,14 @@ export default defineConfig({
   metafile: true,
   platform: "node",
   splitting: false,
-  noExternal: ["elliptic", "bn.js", "asn1.js"], // only bundle these dependencies
+  treeshake: true,
+  // Add specific options for CJS and ESM
+  // This helps ensure proper usage of imports/requires in each format
+  esbuildOptions(options, context) {
+    if (context.format === "cjs") {
+      options.mainFields = ["main"];
+    } else {
+      options.mainFields = ["module", "main"];
+    }
+  },
 });
