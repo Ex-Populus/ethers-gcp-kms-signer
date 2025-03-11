@@ -1,3 +1,11 @@
+## [1.0.10](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.9...1.0.10) (2025-03-11)
+
+
+### Bug Fixes
+
+* update tsup target version ([11b178e](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/11b178ef0dce4bb973e54dfa65a0b037dffa2416))
+* update tsup.config.js formatting ([f4e54b1](https://github.com/Ex-Populus/ethers-gcp-kms-signer/commit/f4e54b14a717c0fe96a4d729e637cf956ec0bcde))
+
 ## [1.0.9](https://github.com/Ex-Populus/ethers-gcp-kms-signer/compare/1.0.8...1.0.9) (2025-03-11)
 
 
