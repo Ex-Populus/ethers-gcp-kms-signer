@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import { ec as EC } from "elliptic";
+
 // @ts-ignore
 import * as asn1 from "asn1.js";
 
