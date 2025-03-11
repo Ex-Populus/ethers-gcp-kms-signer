@@ -104,7 +104,8 @@ export function getEthereumAddress(publicKey: Buffer): string {
   const pubFormatted = pubKeyBuffer.slice(1, pubKeyBuffer.length);
 
   // keccak256 hash of publicKey
-  const address = ethers.utils.keccak256(pubFormatted);
+  const pubKeyHex = Buffer.from(pubFormatted).toString("hex");
+  const address = ethers.keccak256(`0x${pubKeyHex}`);
   // take last 20 bytes as ethereum address
   const EthAddr = `0x${address.slice(-40)}`;
   return EthAddr;
@@ -132,11 +133,19 @@ export async function requestKmsSignature(plaintext: Buffer, kmsCredentials: Gcp
 }
 
 function recoverPubKeyFromSig(msg: Buffer, r: BN, s: BN, v: number) {
-  return ethers.utils.recoverAddress(`0x${msg.toString("hex")}`, {
-    r: `0x${r.toString("hex")}`,
-    s: `0x${s.toString("hex")}`,
+  // For ethers v6, create a proper signature object
+  const rHex = `0x${r.toString("hex")}`;
+  const sHex = `0x${s.toString("hex")}`;
+
+  const signature = ethers.Signature.from({
+    r: rHex,
+    s: sHex,
     v,
   });
+
+  // Recover the address
+  const msgHex = `0x${msg.toString("hex")}`;
+  return ethers.recoverAddress(msgHex, signature);
 }
 
 export function determineCorrectV(msg: Buffer, r: BN, s: BN, expectedEthAddr: string) {

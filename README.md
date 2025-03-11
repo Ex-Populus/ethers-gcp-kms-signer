@@ -2,10 +2,14 @@
 
 This is a wallet or signer that can be used together with [Ethers.js](https://github.com/ethers-io/ethers.js/) applications.
 
+## Requirements
+
+- **ethers.js v6 or greater**: This library requires ethers.js v6.0.0 or higher as a peer dependency.
+
 ## Getting Started
 
 ```sh
-npm i ethers-gcp-kms-signer
+npm i ethers-gcp-kms-signer ethers@^6.0.0
 ```
 
 1. Create your asymmetric key as follows: https://cloud.google.com/kms/docs/creating-asymmetric-keys with `EC_SIGN_SECP256K1_SHA256` algorithm.
@@ -18,6 +22,7 @@ npm i ethers-gcp-kms-signer
 
 ```js
 import { GcpKmsSigner } from "ethers-gcp-kms-signer";
+import { ethers } from "ethers";
 
 const kmsCredentials = {
   projectId: "gcp-project-id", // your project id in gcp
@@ -27,13 +32,14 @@ const kmsCredentials = {
   keyVersion: "1", // the version of the key
 };
 
-const provider = ethers.providers.getDefaultProvider("ropsten");
+// Using ethers v6 provider
+const provider = new ethers.JsonRpcProvider("YOUR_RPC_URL");
 let signer = new GcpKmsSigner(kmsCredentials);
 signer = signer.connect(provider);
 
 const tx = await signer.sendTransaction({
   to: "0xE94E130546485b928C9C9b9A5e69EB787172952e",
-  value: ethers.utils.parseEther("0.01"),
+  value: ethers.parseEther("0.01"),
 });
 console.log(tx);
 ```
