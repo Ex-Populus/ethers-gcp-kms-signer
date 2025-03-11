@@ -14,6 +14,7 @@ jest.config.js
 commitlint.config.js
 release.config.js
 .yo-rc.json
+tsup.config.js
 
 # Git and GitHub
 .git/
