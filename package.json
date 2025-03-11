@@ -20,6 +20,7 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "tsup",
+    "prepare": "npm run build",
     "preversion": "npm run lint && npm test && npm run build",
     "semantic-release": "semantic-release",
     "commit": "git-cz",
