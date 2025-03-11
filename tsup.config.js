@@ -12,5 +12,5 @@ export default defineConfig({
   metafile: true,
   platform: "node",
   splitting: false,
-  noExternal: ["elliptic"], // only bundle these dependencies
+  noExternal: ["elliptic", "bn.js", "asn1.js"], // only bundle these dependencies
 });
